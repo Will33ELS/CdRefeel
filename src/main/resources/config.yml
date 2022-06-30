@@ -1,0 +1,17 @@
+refeelLocation:
+  world:
+  x:
+  y:
+  z:
+  yaw:
+  pitch:
+endDelayLocation:
+  world:
+  x:
+  y:
+  z:
+  yaw:
+  pitch:
+commandsBlacklist:
+  - "/spawn"
+delayInSeconds: 10
