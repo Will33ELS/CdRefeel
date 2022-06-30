@@ -2,6 +2,7 @@ package fr.will33.cdrefeel;
 
 import fr.will33.cdrefeel.command.RefeelCommand;
 import fr.will33.cdrefeel.listener.PlayerListener;
+import fr.will33.cdrefeel.task.RefeelTask;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -40,6 +41,16 @@ public class CdRefeelPlugin extends JavaPlugin {
 
         this.getCommand("refeel").setExecutor(new RefeelCommand());
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
+    }
+
+    /**
+     * Launch refeel
+     * @param player Instance of the player
+     */
+    public void launchRefeel(Player player){
+        CdRefeelPlugin.getInstance().getRestrictedPlayers().add(player);
+        player.teleport(CdRefeelPlugin.getInstance().getRefeelLocation());
+        new RefeelTask(player).runTaskLater(CdRefeelPlugin.getInstance(), CdRefeelPlugin.getInstance().getDelayInSeconds() * 20L);
     }
 
     /**
