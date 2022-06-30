@@ -3,6 +3,5 @@ name: CdRefeel
 version: ${project.version}
 author: William AVENTIN
 website: https://www.elesia.org
-api-version: "1.11"
 commands:
   refeel:
