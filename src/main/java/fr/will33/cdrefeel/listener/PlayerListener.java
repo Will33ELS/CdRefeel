@@ -3,6 +3,7 @@ package fr.will33.cdrefeel.listener;
 import fr.will33.cdrefeel.CdRefeelPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
@@ -18,7 +19,7 @@ public class PlayerListener implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onRespawn(PlayerRespawnEvent event){
         Player player = event.getPlayer();
         event.setRespawnLocation(CdRefeelPlugin.getInstance().getRefeelLocation());
